@@ -353,8 +353,6 @@
                     }
                 }
             ?>
-            <input type="submit" name="edit" value="Edit" />
-            <!--可以更改這個頁面的資料-->
             <input type="submit" name="delete" value="Delete" />
             <!--刪掉這個資料-->
         </div>
