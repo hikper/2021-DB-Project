@@ -1,0 +1,64 @@
+<?php
+    include "header.php";
+?>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<title>Homepage</title>
+    	<style type="text/css">
+	    	body
+	    	{
+	    		font-family: "Arial"
+	    	}
+	    	.head
+	    	{
+	    		background-color: #003344; color: white; font-weight: bold; font-size: 50px;
+	    		text-align: center; padding: 10px;
+	    	}
+	    	.subt
+	    	{
+	    		font-weight: bold; font-size: 35px; text-align: center; padding: 10px;
+	    	}
+	    	.com
+	    	{
+	    		text-align: center; padding: 10px; font-size: 25px;
+	    	}
+	    	.box
+	    	{
+	    		width: 700px; padding: 10px; margin: auto;
+	    		margin-bottom: 10px;
+	    		background-color: white; vertical-align: center;
+
+	    		text-align: center;
+	    	}
+	    	#btn
+	    	{
+	    		font-size: 20px
+	    	}
+    	</style>
+	</head>
+
+	<body style="margin: 0px; background-color: #eeeeee;">
+		<div class="head">Homepage</div>
+
+		<div class="box">
+			<div class="subt">球員資料查詢:</div>
+			<div class="com">
+			    <form name="myForm" method="post" action="Profile.html">
+				    年份：<input type = "text" Name="Year" />
+				    名字：<input type = "text" Name="Name" />
+				    <input type="submit" value="Search">
+				</form>
+				
+			</div>
+			<!--如果找不到資料，顯示ERROR-->
+		</div>
+
+		<div class="box">
+			<div class="subt">新增球員資料:</div>
+			<div class="com"><button id="btn">新增資料</button></div> <!--go to insert_page-->
+		</div>
+	</body>
+</html>
