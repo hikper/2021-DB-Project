@@ -5,4 +5,6 @@
 load csv file 
 ```
 source create.sql; source load.sql;
+create user 'dbweb'@'localhost' identified by 'dbweb';
+grant all on db.* to 'dbweb'@'localhost';
 ```
