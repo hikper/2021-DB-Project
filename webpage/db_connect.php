@@ -2,11 +2,11 @@
 
 $dbservername = "localhost";
 //xampp local host
-$dbusername = "root";
+$dbusername = "dbweb";
 //database user name xampp
-$dbpassword = "";
+$dbpassword = "dbweb";
 //default inside password
-$dbname = "db";
+$dbname = "baseball";
 
 $connect = mysqli_connect($dbservername, $dbusername, $dbpassword, $dbname);
 
@@ -26,3 +26,4 @@ if (mysqli_connect_errno($connect))
 //     $dsn=null;
 // }
 
+?>
