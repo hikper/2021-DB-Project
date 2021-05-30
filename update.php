@@ -83,7 +83,7 @@
                     echo "</p>";
 
 
-                    $update_sql_Batting = "UPDATE Batting
+                    $update_sql_Batting = " UPDATE Batting
                                             SET (playerID = '$_POST[name]',
                                                  yearID = '$_POST[B_Year]',
                                                  teamID = '$_POST[B_Team]',
