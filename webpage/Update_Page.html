@@ -48,156 +48,158 @@
 	<body style="margin: 0px; background-color: #eeeeee;">
 		<div class="head">Update Page</div>
 
-		<div class="box">
-			<table class="tab1">
-				<tr>
-					<td>NAME</td>
-					<td>Height</td>
-					<td>Weight</td>
-					<td>Birthday</td>
-					<td>Deathday</td>
-				</tr>
-				<tr>
-					<td><input type="text" size="10" maxlength="10" name="name"></td>
-					<td><input type="text" size="10" maxlength="10" name="height"></td>
-					<td><input type="text" size="10" maxlength="10" name="weight"></td>
-					<td><input type="text" size="10" maxlength="10" name="birthday"></td>
-					<td><input type="text" size="10" maxlength="10" name="deathday"></td>
-				</tr>
-				<tr>
-					<td>Years pro</td>
-					<td>Bats</td>
-					<td>Throws</td>
-					<td>Salary</td>
-					<td>AGE</td>
-				</tr>
-				<tr>
-					<td><input type="text" size="10" maxlength="10" name="Years pro"></td>
-					<td><input type="text" size="10" maxlength="10" name="bats"></td>
-					<td><input type="text" size="10" maxlength="10" name="throws"></td>
-					<td><input type="text" size="10" maxlength="10" name="salary"></td>
-					<td><input type="text" size="10" maxlength="10" name="age"></td>
-				</tr>
-			</table>
-		</div>
-			
-		<div class="box">
-			<h2>Batting Stats</h2>
-			<table>
-				<tr>
-					<td>Year</td>
-					<td>Team</td>
-					<td>G</td>
-					<td>AB</td>
-					<td>H</td>
-					<td>2B</td>
-					<td>3B</td>
-					<td>HR</td>
-					<td>RBI</td>
-					<td>R</td>
-					<td>SB</td>
-					<td>SO</td>
-					<td>BB</td>
-				</tr>
-				<tr>
-					<td><input type="text" size="1" maxlength="10" name="Year"></td>
-					<td><input type="text" size="1" maxlength="10" name="Team"></td>
-					<td><input type="text" size="1" maxlength="10" name="G"></td>
-					<td><input type="text" size="1" maxlength="10" name="AB"></td>
-					<td><input type="text" size="1" maxlength="10" name="H"></td>
-					<td><input type="text" size="1" maxlength="10" name="2B"></td>
-					<td><input type="text" size="1" maxlength="10" name="3B"></td>
-					<td><input type="text" size="1" maxlength="10" name="HR"></td>
-					<td><input type="text" size="1" maxlength="10" name="RBI"></td>
-					<td><input type="text" size="1" maxlength="10" name="R"></td>
-					<td><input type="text" size="1" maxlength="10" name="SB"></td>
-					<td><input type="text" size="1" maxlength="10" name="SO"></td>
-					<td><input type="text" size="1" maxlength="10" name="BB"></td>
-				</tr>
-			</table>
-		</div>
-			
-		<div class="box">
-			<h2>Fielding Stats</h2>
-			<table>
-				<tr>
-					<td>Year</td>
-					<td>Team</td>
-					<td>Pos</td>
-					<td>InnOuts</td>
-					<td>PO</td>
-					<td>A</td>
-					<td>E</td>
-					<td>DP</td>
-					<td>PB</td>
-				</tr>
+        <form name="update" method="post" action="update.php">
+            <div class="box">
+            <input type="submit" name="update" value="update"/>
+                <table class="tab1">
+                    <tr>
+                        <td>NAME</td>
+                        <td>Height</td>
+                        <td>Weight</td>
+                        <td>Birthday</td>
+                        <td>Deathday</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size="10" maxlength="10" name="name"></td>
+                        <td><input type="text" size="10" maxlength="10" name="height"></td>
+                        <td><input type="text" size="10" maxlength="10" name="weight"></td>
+                        <td><input type="text" size="10" maxlength="10" name="birthday"></td>
+                        <td><input type="text" size="10" maxlength="10" name="deathday"></td>
+                    </tr>
+                    <tr>
+                        <td>Years pro</td>
+                        <td>Bats</td>
+                        <td>Throws</td>
+                        <td>Salary</td>
+                        <td>AGE</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size="10" maxlength="10" name="Years pro"></td>
+                        <td><input type="text" size="10" maxlength="10" name="bats"></td>
+                        <td><input type="text" size="10" maxlength="10" name="throws"></td>
+                        <td><input type="text" size="10" maxlength="10" name="salary"></td>
+                        <td><input type="text" size="10" maxlength="10" name="age"></td>
+                    </tr>
+                </table>
+            </div>
+                
+            <div class="box">
+                <h2>Batting Stats</h2>
+                <table>
+                    <tr>
+                        <td>Year</td>
+                        <td>Team</td>
+                        <td>G</td>
+                        <td>AB</td>
+                        <td>H</td>
+                        <td>2B</td>
+                        <td>3B</td>
+                        <td>HR</td>
+                        <td>RBI</td>
+                        <td>R</td>
+                        <td>SB</td>
+                        <td>SO</td>
+                        <td>BB</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size="1" maxlength="10" name="B_Year"></td>
+                        <td><input type="text" size="1" maxlength="10" name="B_Team"></td>
+                        <td><input type="text" size="1" maxlength="10" name="B_G"></td>
+                        <td><input type="text" size="1" maxlength="10" name="B_AB"></td>
+                        <td><input type="text" size="1" maxlength="10" name="B_H"></td>
+                        <td><input type="text" size="1" maxlength="10" name="B_2B"></td>
+                        <td><input type="text" size="1" maxlength="10" name="B_3B"></td>
+                        <td><input type="text" size="1" maxlength="10" name="B_HR"></td>
+                        <td><input type="text" size="1" maxlength="10" name="B_RBI"></td>
+                        <td><input type="text" size="1" maxlength="10" name="B_R"></td>
+                        <td><input type="text" size="1" maxlength="10" name="B_SB"></td>
+                        <td><input type="text" size="1" maxlength="10" name="B_SO"></td>
+                        <td><input type="text" size="1" maxlength="10" name="B_BB"></td>
+                    </tr>
+                </table>
+            </div>
+                
+            <div class="box">
+                <h2>Fielding Stats</h2>
+                <table>
+                    <tr>
+                        <td>Year</td>
+                        <td>Team</td>
+                        <td>Pos</td>
+                        <td>InnOuts</td>
+                        <td>PO</td>
+                        <td>A</td>
+                        <td>E</td>
+                        <td>DP</td>
+                        <td>PB</td>
+                    </tr>
 
-				<tr>
-					<td><input type="text" size="3" maxlength="10" name="Year"></td>
-					<td><input type="text" size="3" maxlength="10" name="Team"></td>
-					<td><input type="text" size="3" maxlength="10" name="Pos"></td>
-					<td><input type="text" size="3" maxlength="10" name="InnOuts"></td>
-					<td><input type="text" size="3" maxlength="10" name="PO"></td>
-					<td><input type="text" size="3" maxlength="10" name="A"></td>
-					<td><input type="text" size="3" maxlength="10" name="E"></td>
-					<td><input type="text" size="3" maxlength="10" name="DP"></td>
-					<td><input type="text" size="3" maxlength="10" name="PB"></td>
-				</tr>
-			</table>
-		</div>
+                    <tr>
+                        <td><input type="text" size="3" maxlength="10" name="F_Year"></td>
+                        <td><input type="text" size="3" maxlength="10" name="F_Team"></td>
+                        <td><input type="text" size="3" maxlength="10" name="F_Pos"></td>
+                        <td><input type="text" size="3" maxlength="10" name="F_InnOuts"></td>
+                        <td><input type="text" size="3" maxlength="10" name="F_PO"></td>
+                        <td><input type="text" size="3" maxlength="10" name="F_A"></td>
+                        <td><input type="text" size="3" maxlength="10" name="F_E"></td>
+                        <td><input type="text" size="3" maxlength="10" name="F_DP"></td>
+                        <td><input type="text" size="3" maxlength="10" name="F_PB"></td>
+                    </tr>
+                </table>
+            </div>
 
-		<div class="box">
-			<h2>Pitching Stats</h2>
-			<table>
-				<tr>
-					<td>Year</td>
-					<td>Team</td>
-					<td>W</td>
-					<td>L</td>
-					<td>G</td>
-					<td>IPouts</td>	
-					<td>GS</td>
-					<td>GF</td>
-					<td>ER</td>
-					<td>SO</td>
-					<td>WP</td>			
-				</tr>
-				<tr>
-					<td><input type="text" size="3" maxlength="10" name="Year"></td>
-					<td><input type="text" size="3" maxlength="10" name="Team"></td>
-					<td><input type="text" size="3" maxlength="10" name="W"></td>
-					<td><input type="text" size="3" maxlength="10" name="L"></td>
-					<td><input type="text" size="3" maxlength="10" name="G"></td>
-					<td><input type="text" size="3" maxlength="10" name="IPouts"></td>
-					<td><input type="text" size="3" maxlength="10" name="GS"></td>
-					<td><input type="text" size="3" maxlength="10" name="GF"></td>
-					<td><input type="text" size="3" maxlength="10" name="ER"></td>
-					<td><input type="text" size="3" maxlength="10" name="SO"></td>
-					<td><input type="text" size="3" maxlength="10" name="WP"></td>
-				</tr>
-			</table>
-		</div>
+            <div class="box">
+                <h2>Pitching Stats</h2>
+                <table>
+                    <tr>
+                        <td>Year</td>
+                        <td>Team</td>
+                        <td>W</td>
+                        <td>L</td>
+                        <td>G</td>
+                        <td>IPouts</td>
+                        <td>GS</td>
+                        <td>GF</td>
+                        <td>ER</td>
+                        <td>SO</td>
+                        <td>WP</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size="3" maxlength="10" name="P_Year"></td>
+                        <td><input type="text" size="3" maxlength="10" name="P_Team"></td>
+                        <td><input type="text" size="3" maxlength="10" name="P_W"></td>
+                        <td><input type="text" size="3" maxlength="10" name="P_L"></td>
+                        <td><input type="text" size="3" maxlength="10" name="P_G"></td>
+                        <td><input type="text" size="3" maxlength="10" name="P_IPouts"></td>
+                        <td><input type="text" size="3" maxlength="10" name="P_GS"></td>
+                        <td><input type="text" size="3" maxlength="10" name="P_GF"></td>
+                        <td><input type="text" size="3" maxlength="10" name="P_ER"></td>
+                        <td><input type="text" size="3" maxlength="10" name="P_SO"></td>
+                        <td><input type="text" size="3" maxlength="10" name="P_WP"></td>
+                    </tr>
+                </table>
+            </div>
 
-		<div class="box">
-			<h2>Award</h2>
-			<table style="margin-bottom: 10px">
-				<tr>
-					<td>Award</td>
-					<td>Year</td>
-					<td>PointsWon</td>
-					<td>PointsMax</td>
-					<td>VotesFirst</td>
-				</tr>
-				<tr>
-					<td><input type="text" size="10" maxlength="10" name="Award"></td>
-					<td><input type="text" size="10" maxlength="10" name="Year"></td>
-					<td><input type="text" size="10" maxlength="10" name="PointsWon"></td>
-					<td><input type="text" size="10" maxlength="10" name="PointsMax"></td>
-					<td><input type="text" size="10" maxlength="10" name="VotesFirst"></td>
-				</tr>
-			</table>
-			<button id="btn">Update</button>
-		</div>
-		
+            <div class="box">
+                <h2>Award</h2>
+                <table style="margin-bottom: 10px">
+                    <tr>
+                        <td>Award</td>
+                        <td>Year</td>
+                        <td>PointsWon</td>
+                        <td>PointsMax</td>
+                        <td>VotesFirst</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size="10" maxlength="10" name="A_Award"></td>
+                        <td><input type="text" size="10" maxlength="10" name="A_Year"></td>
+                        <td><input type="text" size="10" maxlength="10" name="A_PointsWon"></td>
+                        <td><input type="text" size="10" maxlength="10" name="A_PointsMax"></td>
+                        <td><input type="text" size="10" maxlength="10" name="A_VotesFirst"></td>
+                    </tr>
+                </table>
+                <button id="btn">Update</button>
+            </div>
+        </form>
 	</body>
 </html>
