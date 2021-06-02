@@ -51,6 +51,7 @@
     </head>
     <body style="margin: 0px; background-color: #eeeeee;">
         <div class="head">Profile</div>
+        <div class="box">
             <?php
             
                 
@@ -86,7 +87,7 @@
                     $update_sql_Batting = " UPDATE Batting
                                             SET  playerID = '$_POST[name]',
                                                  yearID = $_POST[B_Year],
-                                                 teamID = $_POST[B_Team],
+                                                 teamID = '$_POST[B_Team]',
                                                  G = $_POST[B_G],
                                                  AB = $_POST[B_AB],
                                                  H = $_POST[B_H],
@@ -99,11 +100,11 @@
                                                  SO = $_POST[B_SO],
                                                  BB = $_POST[B_BB]
                                             WHERE playerID = '$_POST[name]'";
-                    /*
-                    echo "<p>";
-                    echo $update_sql_Batting;
-                    echo "</p>";
-                    */
+                    
+                    // echo "<p>";
+                    // echo $update_sql_Batting;
+                    // echo "</p>";
+                    
                     echo "<p>";
                     if (!mysqli_query($connect, $update_sql_Batting))
                     {
@@ -117,7 +118,7 @@
 
                     $update_sql_Fielding = "UPDATE Fielding
                                             SET  yearID = $_POST[F_Year],
-                                                 teamID = $_POST[F_Team],
+                                                 teamID = '$_POST[F_Team]',
                                                  POS = $_POST[F_POS],
                                                  InnOuts = $_POST[F_InnOuts],
                                                  PO = $_POST[F_PO],
@@ -137,7 +138,7 @@
                     }
                     else
                     {
-                        echo "1 record update into Fielding successfully";
+                        echo "1 record update into Pitching successfully";
                     }
 
                     $update_sql_Pitching = "UPDATE Pitching
@@ -199,7 +200,7 @@
                 
             ?>
             <input type="button" name="Submit" value="Main Page" onclick="location.href='index.html'"/> 
-        </div>
+        </div></div>
         
     </body>
 </html>
