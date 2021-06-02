@@ -98,7 +98,7 @@
                                                  SB = $_POST[B_SB],
                                                  SO = $_POST[B_SO],
                                                  BB = $_POST[B_BB]
-                                            WHERE playerID = '$_POST[name]'";
+                                            WHERE playerID = '$_POST[playerID]'";
                     /*
                     echo "<p>";
                     echo $update_sql_Batting;
@@ -125,7 +125,7 @@
                                                  E = $_POST[F_E],
                                                  DP = $_POST[F_DP],
                                                  PB = $_POST[F_PB]
-                                            WHERE playerID = '$_POST[name]'";
+                                            WHERE playerID = '$_POST[playerID]'";
                     /*
                     echo "<p>";
                     echo $update_sql_Fielding;
@@ -152,7 +152,7 @@
                                                  ER = $_POST[P_ER],
                                                  SO = $_POST[P_SO],
                                                  WP = $_POST[P_WP]
-                                            WHERE playerID = '$_POST[name]'";
+                                            WHERE playerID = '$_POST[playerID]'";
 
                     /*
                     echo "<p>";
@@ -176,7 +176,7 @@
                                                            pointsWon = $_POST[A_PointsWon],
                                                            pointsMax = $_POST[A_PointsMax],
                                                            votesFirst = $_POST[A_VotesFirst]
-                                                      WHERE playerID = '$_POST[name]'";
+                                                      WHERE playerID = '$_POST[playerID]'";
                     /*
                     echo "<p>";
                     echo $update_sql_AwardsSharePlayers;
