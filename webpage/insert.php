@@ -51,6 +51,7 @@
     </head>
     <body style="margin: 0px; background-color: #eeeeee;">
         <div class="head">Profile</div>
+            <div class="box">
             <?php
             
                 
@@ -183,6 +184,9 @@
                 }
                 
             ?>
+        
+			<input type="button" name="Submit" value="Main Page" onclick="location.href='index.html'"/> <!--go to insert_page-->
+		</div>
         </div>
         
     </body>
