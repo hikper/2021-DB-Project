@@ -40,10 +40,10 @@
             {
                 border: 1px solid #000000; padding: 10px;
             }
-            tr:nth-child(odd)
+            /* tr:nth-child(odd)
             {
                 background-color: #7788aa; color: #ffffff;
-            }
+            } */
             
         </style>
     </head>
@@ -55,17 +55,20 @@
                 if( isset($_POST['search']) )
                 {
                     // Get data from post
-                    $year =  mysqli_real_escape_string($connect, $_POST['Year']);
-                    $name =  mysqli_real_escape_string($connect, $_POST['Name']);
+                    $oyear = mysqli_real_escape_string($connect, $_POST['Year']);
+                    $year =  $oyear;
+                    if($year == '') $year = 'b.yearID';
+                    $fullname =  mysqli_real_escape_string($connect, $_POST['Name']);
+                    $name = explode(" ", $fullname);
                     // SQL query
                     $sql = "SELECT nameFirst, nameLast, height, weight, birthYear, birthMonth, birthDay, deathYear, deathMonth, deathDay
                             FROM MASTER 
-                            WHERE nameGiven='$name';";
+                            WHERE nameFirst='$name[0]' AND nameLast='$name[1]';";
                     $result = mysqli_query($connect, $sql);
                     $resultcheck = mysqli_num_rows($result);
                     echo '<div class="box">
                         <table class="tab1">
-                            <tr>
+                            <tr style="background-color: #7788aa; color: #ffffff">
                                 <td>NAME</td>
                                 <td>Height</td>
                                 <td>Weight</td>
@@ -98,15 +101,15 @@
                     $sql = "SELECT bats, throws, birthCountry, 
                                 IF(deathYear=0 AND birthYear!=0, 2021-birthYear,deathYear-birthYear) age
                             FROM MASTER
-                            WHERE nameGiven='$name';";
+                            WHERE nameFirst='$name[0]' AND nameLast='$name[1]';";
                     $result = mysqli_query($connect, $sql);
                     $resultcheck = mysqli_num_rows($result);
-                    echo "<tr>
+                    echo '<tr style="background-color: #7788aa; color: #ffffff">
                         <td>Bats</td>
                         <td>Throws</td>
                         <td>Age</td>
                         <td>Country</td>
-                    </tr>";
+                    </tr>';
                     if($resultcheck>0)
                     {
                         foreach($result as $row)
@@ -138,7 +141,7 @@
                             FROM Batting b,
                                 (SELECT playerID
                                 FROM MASTER
-                                WHERE nameGiven='$name') as m
+                                WHERE nameFirst='$name[0]' AND nameLast='$name[1]') as m
                             WHERE m.playerID=b.playerID AND b.yearID=$year;";
                     // echo '<p>'.$sql.'</p>';
                     $result = mysqli_query($connect, $sql);
@@ -146,7 +149,7 @@
                     echo '<div class="box">
                         <h2>Batting Stats</h2>
                         <table>
-                            <tr>
+                            <tr style="background-color: #7788aa; color: #ffffff">
                                 <td>Year</td>
                                 <td>Team</td>
                                 <td>G</td>
@@ -205,18 +208,18 @@
                     </div>";
                     
                 // third query
-                $sql = "SELECT f.yearID, f.teamID, f.POS, f.InnOuts, f.PO, f.A, f.E, f.DP, f.PB
+                $sql = "SELECT b.yearID, b.teamID, b.POS, b.InnOuts, b.PO, b.A, b.E, b.DP, b.PB
                     FROM Fielding f,
                         (SELECT playerID
                         FROM MASTER
-                        WHERE nameGiven='$name') as m
-                    WHERE m.playerID=f.playerID AND f.yearID=$year;";
+                        WHERE nameFirst='$name[0]' AND nameLast='$name[1]') as m
+                    WHERE m.playerID=b.playerID AND b.yearID=$year;";
                 $result = mysqli_query($connect, $sql);
                 $resultcheck = mysqli_num_rows($result);
                 echo '<div class="box">
                     <h2>Fielding Stats</h2>
                     <table>
-                        <tr>
+                        <tr style="background-color: #7788aa; color: #ffffff">
                             <td>Year</td>
                             <td>Team</td>
                             <td>Pos</td>
@@ -263,18 +266,18 @@
                 </div>";
                     
                 // fourth query
-                $sql = "SELECT p.yearID, p.teamID, p.W, p.L, p.G, p.IPouts, p.GS, p.GF, p.ER, p.SO, p.WP
+                $sql = "SELECT b.yearID, b.teamID, b.W, b.L, b.G, b.IPouts, b.GS, b.GF, b.ER, b.SO, b.WP
                     FROM Pitching p,
                         (SELECT playerID
                         FROM MASTER
-                        WHERE nameGiven='$name') as m
-                    WHERE m.playerID=p.playerID AND p.yearID=$year;";
+                        WHERE nameFirst='$name[0]' AND nameLast='$name[1]') as m
+                    WHERE m.playerID=b.playerID AND b.yearID=$year;";
                 $result = mysqli_query($connect, $sql);
                 $resultcheck = mysqli_num_rows($result);
                 echo '<div class="box">
                     <h2>Pitching Stats</h2>
                     <table>
-                        <tr>
+                        <tr style="background-color: #7788aa; color: #ffffff">
                             <td>Year</td>
                             <td>Team</td>
                             <td>W</td>
@@ -328,18 +331,18 @@
                 </div>";
 
                 // fifth query
-                $sql = "SELECT p.awardID, p.yearID, p.pointsWon, p.pointsMax, p.votesFirst
+                $sql = "SELECT b.awardID, b.yearID, b.pointsWon, b.pointsMax, b.votesFirst
                         FROM AwardsSharePlayers p,
                             (SELECT playerID
                             FROM MASTER
-                            WHERE nameGiven='$name') as m
-                        WHERE m.playerID=p.playerID AND p.yearID=$year;";
+                            WHERE nameFirst='$name[0]' AND nameLast='$name[1]') as m
+                        WHERE m.playerID=b.playerID AND b.yearID=$year;";
                 $result = mysqli_query($connect, $sql);
                 $resultcheck = mysqli_num_rows($result);
                 echo '<div class="box">
                 <h2>Award</h2>
                 <table>
-                    <tr>
+                    <tr style="background-color: #7788aa; color: #ffffff">
                         <td>Award</td>
                         <td>Year</td>
                         <td>PointsWon</td>
@@ -373,11 +376,72 @@
                 }
                 echo "</table>
                 </div>";
+                echo '
+                <div style="text-align: center" >
+                    <div class="box">
+                        <form name="myForm" method="post" action="Profile.php">
+                            <input type = "hidden" Name="Year" value="'.$oyear.'"/>
+                            <input type = "hidden" Name="Name" value="'.$fullname.'"/>
+                            <input type="submit" name="delete" value="Delete" />
+                        </form>
+                    </div>
+                </div>';
             }
             ?>
-            <div style="text-align: center" >
-                <input type="submit" name="delete" value="Delete" />
-            </div>
+            <?php
+                $message = ""; // error message
+                if( isset($_POST['delete']) )
+                {
+                    // Get data from post
+                    $year =  mysqli_real_escape_string($connect, $_POST['Year']);
+                    if($year == '') $year = 'b.yearID';
+                    $fullname =  mysqli_real_escape_string($connect, $_POST['Name']);
+                    $name = explode(" ", $fullname);
+                    
+                    // second query
+                    $sql = "DELETE FROM Batting b,
+                                (SELECT playerID
+                                FROM MASTER
+                                WHERE nameFirst='$name[0]' AND nameLast='$name[1]') as m
+                            WHERE m.playerID=b.playerID AND b.yearID=$year;";
+                    $result = mysqli_query($connect, $sql);
+                
+                    // third query    
+                    $sql = "DELETE FROM Fielding f,
+                            (SELECT playerID
+                            FROM MASTER
+                            WHERE nameFirst='$name[0]' AND nameLast='$name[1]') as m
+                        WHERE m.playerID=b.playerID AND b.yearID=$year;";
+                    $result = mysqli_query($connect, $sql);
+                    
+                        
+                    // fourth query
+                    $sql = "DELETE FROM Pitching p,
+                            (SELECT playerID
+                            FROM MASTER
+                            WHERE nameFirst='$name[0]' AND nameLast='$name[1]') as m
+                        WHERE m.playerID=b.playerID AND b.yearID=$year;";
+                    $result = mysqli_query($connect, $sql);
+                    
+
+                    // fifth query
+                    $sql = "DELETE FROM AwardsSharePlayers p,
+                                (SELECT playerID
+                                FROM MASTER
+                                WHERE nameFirst='$name[0]' AND nameLast='$name[1]') as m
+                            WHERE m.playerID=b.playerID AND b.yearID=$year;";
+                    $result = mysqli_query($connect, $sql);
+
+                    // SQL query
+                    $sql = "DELETE FROM MASTER 
+                            WHERE nameFirst='$name[0]' AND nameLast='$name[1]';";
+                    $result = mysqli_query($connect, $sql);
+
+                }
+                ?>
+                <div class="box">
+                    <input type="button" name="Submit" value="Main Page" onclick="location.href='index.html'"/>
+                </div>
             <!--刪掉這個資料-->
         </div>
         
